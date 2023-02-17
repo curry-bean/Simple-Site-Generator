@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ title }} - My Site</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>My Site</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Welcome to My Site!</h2>
+        <p>This is the homepage of my site. You can use this space to introduce yourself, your site, or your organization. Be sure to include links to your other pages so visitors can explore your site.</p>
+        <h3>Latest Articles</h3>
+        <ul>
+        {% for article in articles %}
+            <li><a href="/{{ article.slug }}">{{ article.title }}</a></li>
+        {% endfor %}
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; {{ year }} My Site</p>
+    </footer>
+</body>
+</html>
